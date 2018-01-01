@@ -400,6 +400,7 @@ module.exports = (env) ->
 
 	# check a domain
 	App.checkDomain = check check.format.key, 'string', (key, domain_str, callback) ->
+		return callback null, true
 		App.getDomains key, (err, domains) ->
 			return callback err if err
 			domain = Url.parse domain_str
